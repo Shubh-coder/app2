@@ -1,0 +1,19 @@
+
+<h2>Add a comment:</h2>
+<%= form_with model: @comment do |form| %>
+  <div class:" field form-group">
+    <%= form.label :commenter %><br>
+    <%= form.text_field :commenter, class:"form-control" %>
+  </p>
+  <div class:" field form-group">
+    <%= form.label :body %><br>
+    <%= form.text_area :body, class:"form-control" %>
+  </div>
+  <div class:" field form-group">
+    <%= form.label :user_Id %><br>
+    <%= form.text_field :user_id, class:"form-control" ,value: current_user.id %>
+  </div>
+  <div class="field form-group">
+    <%= form.submit class:"btn btn-success" %>
+  </div>
+<% end %> 

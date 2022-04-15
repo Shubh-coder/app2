@@ -1,0 +1,33 @@
+<div class="container-fluid">
+ <p>
+  <strong style="color:#58D68D">Title:</strong>
+  <%= @article.title %>
+ </p>
+ 
+ <p>
+  <strong style="color:#58D68D">Body:</strong>
+  <%= @article.body %>
+ </p>
+
+<div>
+   <p>
+    <%= image_tag(article.image, style:"width:50%")%>
+ </p>
+
+<ul>
+    <%= link_to "edit", edit_article_path(@article), class: "btn btn-secondary" %> 
+    <%= link_to "Destroy", article_path(@article), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  }, class:"btn btn-danger" %>
+      
+</ul>
+
+
+<br>
+<br/>
+
+<%= render "comments/comment" , comment:@comments%>
+
+ <%= link_to "comment" ,new_comment_path(@article), class:"btn btn-info"%>
+ 

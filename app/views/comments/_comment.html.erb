@@ -1,0 +1,21 @@
+<% @comments.each do |comment|%>
+<p>
+  <strong>Commenter:</strong>
+  <%= comment.commenter %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= comment.body %>
+</p>
+<p>
+   <i><%= comment.user.email%></i>
+<p>
+  <%= link_to "Destroy Comment",comment_path(comment), data: {
+                turbo_method: :delete,
+                turbo_confirm: "Are you sure?"
+              }, class:"btn btn-primary" %>
+</p>
+<% end %>
+
+ 
